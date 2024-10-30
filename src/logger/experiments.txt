@@ -1,0 +1,20 @@
+Experiment name: 1st-experiment
+Results filename: data_1st-experiment.csv
+All queries were performed 10 times (same conversation) with: 10, 100 and 650 PoIs in limit.
+The dataset used in the CB is: database with 1088 PoIs, file: generated_GPT4o_Madrid.json
+
+Generic
+Q1: What can I visit today in Madrid?
+
+Specific for a high-expected quantity
+Q2: Could you please recommend historical landmarks?
+
+Specific narrowed for low-expected quantity
+Q3: Could you please recommend free of charge sport related attractions?
+
+Concrete existent PoI
+Q4: Do you know if I can visit Museo del Prado?
+
+Concrete non-existent PoI
+Q5: I'd like to visit the Eiffel Tower, what would you recommend to visit near this attraction?
+

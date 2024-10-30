@@ -79,6 +79,7 @@ window.chatApp.getPoIs = async function(coord=[], fiwareService="ld") {
     }
     NGSI_entities = {
       "coord": coord,
+      "url": url,
       "entities": await response.json()
     };
     return NGSI_entities;

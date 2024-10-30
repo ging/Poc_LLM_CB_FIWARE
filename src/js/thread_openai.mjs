@@ -60,7 +60,6 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
     role: 'user',
     content: userMessage,
   })
-  //console.log('Adding message to thread: ', message)
 
   const run = await openai.beta.threads.runs.create(threadId, {
     assistant_id: assistantId,
@@ -102,7 +101,6 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
 
   const answer = (messages.data ?? []).find((m) => m?.role === 'assistant')
     ?.content?.[0]
-
   return {
     //_complete_message: messages,
     //_complete_answer: answer,
@@ -111,6 +109,7 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
     zoomedEntities: zoomedEntities.entities.map(
       it => it.id
     ),
+    url: zoomedEntities.url,
     limit: document.getElementById("limit").value,
     assistantInstructions: instructions,
     extraInstructions: extraInstructions,
@@ -120,6 +119,7 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
     durationOAI: durationOAI,
     duration: duration,
     waiting: waiting,
+    logTime: new Date().toISOString()
   }
   //return answer.text.value; // Return the response from the assistant
 }
