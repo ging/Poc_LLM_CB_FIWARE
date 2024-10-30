@@ -1,3 +1,60 @@
+Experiment name: 2nd-experiment
+Results filename: data_2nd-experiment.csv
+All queries were performed 10 times (same conversation) with: 10, 100 and 650 PoIs in limit.
+The dataset used in the CB is: database with 1088 PoIs, file: generated_GPT4o_Madrid.json
+
+Generic
+Q1: What can I visit today in Madrid?
+OK    ANS10:  Here are some places you can visit in Madrid: 1. Restaurante StreetXO 2. Iglesia de Santa María la Real de La Almudena 3. Hospital Clínico San Carlos 4. Juzgados de Plaza de Castilla 5. Restaurante El Club Allard 6. Restaurante Sobrino de Botín 7. Hospital Universitario 12 de Octubre 8. Universidad Politécnica de Madrid (UPM) 9. Restaurante Botín 10. El Retiro
+OK    ANS100: Here are some places you can visit in Madrid: 1. Restaurante StreetXO 2. Iglesia de Santa María la Real de La Almudena 3. Hospital Clínico San Carlos 4. Juzgados de Plaza de Castilla 5. Restaurante El Club Allard 6. Restaurante Sobrino de Botín 7. Hospital Universitario 12 de Octubre 8. Universidad Politécnica de Madrid (UPM) 9. Restaurante Botín 10. El Retiro
+OK    ANS650: Here are some places you can visit in Madrid: 1. Restaurante StreetXO 2. Iglesia de Santa María la Real de La Almudena 3. Hospital Clínico San Carlos 4. Juzgados de Plaza de Castilla 5. Restaurante El Club Allard 6. Restaurante Sobrino de Botín 7. Hospital Universitario 12 de Octubre 8. Universidad Politécnica de Madrid (UPM) 9. Restaurante Botín 10. El Retiro
+
+
+Specific for a high-expected quantity
+Q2: What can I visit today in Madrid that costs between 10 and 20€?
+OK                  ANS10:  I do not know.
+Wrong - 4 PoIs      ANS100: I do not know.
+Wrong - 6 PoIs      ANS650: I do not know.
+
+
+
+Specific narrowed for low-expected quantity
+Q3: What can I visit today in Madrid that is free of charge and has a ratio  of occupancy of less than 10%?
+Wrong - 1 PoIs      ANS10:  I do not know.
+Wrong - 13 PoIs     ANS100: I do not know.
+Wrong - 64 PoIs     ANS650: I do not know.
+
+
+Q3_hint: What can I visit today in Madrid that is free of charge and has a ratio  of occupancy of less than 10%? You will know the occupancy percentage with the ratio between the occupancy over the capacity of the PoI.
+Wrong - 1 PoIs      ANS10:  I do not know.
+Wrong - 13 PoIs     ANS100: I do not know.
+Wrong - 64 PoIs     ANS650:  I do not know.
+
+
+
+Q4: I want to reccommend to tourists some places that have a high number of attendacy?
+OK    ANS10:  Here are some places in Madrid with a high number of attendance: 1. Iglesia de Santa María la Real de La Almudena 2. Hospital Clínico San Carlos 3. Juzgados de Plaza de Castilla 4. Restaurante El Club Allard 5. Restaurante Botín
+OK    ANS100: Here are some places in Madrid with a high number of attendance: 1. Iglesia de Santa María la Real de La Almudena 2. Hospital Clínico San Carlos 3. Juzgados de Plaza de Castilla 4. Restaurante El Club Allard 5. Restaurante Botín
+OK    ANS650: Here are some places in Madrid with a high number of attendance: 1. Iglesia de Santa María la Real de La Almudena 2. Hospital Clínico San Carlos 3. Juzgados de Plaza de Castilla 4. Restaurante El Club Allard 5. Restaurante Botín
+
+
+Concrete existent PoI (is the PoI: urn:ngsi-ld:PoI:5,PoI,Museo del Prado)
+Q5: Do you know if I can visit Museo del Prado?
+OK - Not present    ANS10:  I do not know.
+Wrong - PoI:5       ANS100: I do not know.
+Wrong - PoI:5       ANS650: I do not know.
+
+
+Concrete non-existent PoI
+Q6: Do you know if I can visit the Eiffel Tower in Madrid?
+OK    ANS10:  I do not know.
+OK    ANS100: I do not know.
+OK    ANS650: I do not know.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 Experiment name: 1st-experiment
 Results filename: data_1st-experiment.csv
 All queries were performed 10 times (same conversation) with: 10, 100 and 650 PoIs in limit.
@@ -17,4 +74,3 @@ Q4: Do you know if I can visit Museo del Prado?
 
 Concrete non-existent PoI
 Q5: I'd like to visit the Eiffel Tower, what would you recommend to visit near this attraction?
-
