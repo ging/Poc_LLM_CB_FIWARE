@@ -1,3 +1,30 @@
+Experiment name: qualitative experiment results - evaluate correctness in responses
+Results filenames: results_qualitative_10.csv, results_qualitative_100.csv, results_qualitative_650.csv 
+All queries were performed 1 time (same conversation) with: 10, 100 and 650 PoIs in limit. Incognito session with reloading for every PoI limit
+The dataset used in the CB is: database with 1088 PoIs, file: generated_GPT4o_Madrid.json
+
+Q1: Could you please recommend to me the most interesting landmarks or places in Madrid?
+Q2: Please, list me the top 5 most relevant sites in Madrid
+
+Q3: Please, inform me of all the places I can visit today in Madrid that cost between 10€ and 20€
+
+Q4: Please, show me some landmarks that are free of charge
+Q5: Please, list some places that are related to sports
+
+Q6: Could you please tell me if you know “Museo del Prado”?
+Q7: Could you please notify me if “Museo del Prado” is free of charge to visit?
+Q8: And would you please tell me if “Museo del Prado” is currently crowded?
+
+Q9: Could you please show me places with occupancy less than 50 people and relevance equal to 1?
+Q10: Could you please show me places that have an occupancy of not less than 50 people and its relevance is not 1? 
+
+Q11: Could you please show me places with occupancy less than 50 OR relevance equal to 1?
+Q12: Could you please show me places that are not occupied by less than 50 people or do not have a relevance of 1?
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 Experiment name: 2nd-experiment
 Results filename: data_2nd-experiment.csv
 All queries were performed 10 times (same conversation) with: 10, 100 and 650 PoIs in limit.
