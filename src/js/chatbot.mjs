@@ -56,8 +56,7 @@ const generateResponse = async (incomingChatLi) => {
 	try {
 		console.log(`Sending message...⏳ ${userMessage}`);
 		let response = await sendMessage(thread.id, assistant.id, userMessage);
-		const response_to_log = response;
-		logStats(response_to_log);
+		logStats(response);
 		console.log('**** Response IS: ', response);
 		response = response.response;
 		messageElement.textContent = response;

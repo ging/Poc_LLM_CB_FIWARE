@@ -3,7 +3,8 @@ import OpenAI from 'openai'
 
 window.chatApp = window.chatApp || {};
 
-const model = "gpt-4o";
+const model = "gpt-4o-mini";
+const modelTemperature = 1.0;
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -30,6 +31,7 @@ export async function createThreadAssistant() {
   const assistant = await openai.beta.assistants.create({
     instructions: instructions,
     model: model,
+    temperature: modelTemperature
   })
   return [thread, assistant];
 }
@@ -98,12 +100,12 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
   await checkRun()
 
   const messages = await openai.beta.threads.messages.list(threadId)
+  console.log(message)
+  console.log(answer)
 
   const answer = (messages.data ?? []).find((m) => m?.role === 'assistant')
     ?.content?.[0]
   return {
-    //_complete_message: messages,
-    //_complete_answer: answer,
     model: model,
     coordinates: zoomedEntities.coord,
     zoomedEntities: zoomedEntities.entities.map(
@@ -114,6 +116,7 @@ export async function sendMessage(threadId, assistantId, userMessage, additional
     assistantInstructions: instructions,
     extraInstructions: extraInstructions,
     prompt: userMessage,
+    modelTemperature: modelTemperature,
     response: answer.text.value,
     durationCB: endCB-start,
     durationOAI: durationOAI,
