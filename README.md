@@ -44,6 +44,13 @@ npm install
 npm run build
 ```
 
+You should see a message like
+```
+Build complete!
+```
+
+All previous steps should be performed only the first time, except the map serving that should be run as a part of the app.
+
 ### Start FIWARE GEs
 
 ```
